@@ -12,7 +12,6 @@ import KidsPlatform from '../components/KidsPlatform';
 import DonateCollectables from '../components/DonateCollectables';
 import Organization from '../components/Organization';
 import AntiGravity from '../components/AntiGravity';
-import LaunchStatus from '../components/LaunchStatus';
 
 const revenueMixData = [
   { name: 'YouAndINotAI (DateApp)', value: 60, color: '#3b82f6' },
@@ -65,7 +64,8 @@ const deploymentSteps = [
   { title: "T5500 Node (192.168.0.15)", description: "DateApp Production Deployment running Dual Xeon with 72GB RAM. Services: backend:8000, frontend:5173, postgres:5432, ollama:11434." },
   { title: "9020 Node (192.168.0.5)", description: "Dev Secondary / Claude Code Browser Dedicated running i7-4790K." },
   { title: "Charity Nodes (OMEGA)", description: "Future Fleet of 40+ machines pending funding. Activated AFTER DateApp generates revenue." },
-  { title: "Cloudflare & AWS", description: "DNS managed via Cloudflare. Production hosted on AWS EC2 (3.84.226.108)." }
+  { title: "Cloudflare & AWS", description: "DNS managed via Cloudflare. Production hosted on AWS EC2 (3.84.226.108)." },
+  { title: "Next.js Turbopack", description: "Optimized build system for lightning-fast performance and rapid development cycles." }
 ];
 
 export default function Dashboard() {
@@ -98,7 +98,6 @@ export default function Dashboard() {
   const tabs = [
     { id: 'overview', label: 'Overview' },
     { id: 'metrics', label: 'DAO Metrics' },
-    { id: 'launch', label: 'Launch Status 🚀' },
     { id: 'chat', label: 'AI Assistant' },
     { id: 'designer', label: 'Agent Designer' },
     { id: 'platforms', label: 'Platforms' },
@@ -113,7 +112,7 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className={`min-h-screen font-sans transition-colors duration-300 ${isDarkMode ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'} selection:bg-blue-500/30`}>
+    <div className={`min-h-screen font-sans transition-colors duration-300 ${isDarkMode ? 'dark bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'} selection:bg-blue-500/30`}>
       {/* Background Gradients */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         <div className={`absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full blur-[120px] opacity-50 ${isDarkMode ? 'bg-blue-900/30' : 'bg-blue-200/50'}`} />
@@ -312,7 +311,6 @@ export default function Dashboard() {
           )}
 
           {activeTab === 'metrics' && <DAOMetrics isDarkMode={isDarkMode} />}
-          {activeTab === 'launch' && <LaunchStatus isDarkMode={isDarkMode} />}
           {activeTab === 'chat' && <GeminiChat apiKey={apiKey} isDarkMode={isDarkMode} />}
           {activeTab === 'designer' && <AgentDesigner isDarkMode={isDarkMode} />}
           {activeTab === 'integrations' && <Integrations isDarkMode={isDarkMode} />}
@@ -434,7 +432,7 @@ export default function Dashboard() {
                     <Key className={`w-6 h-6 ${isDarkMode ? 'text-yellow-400' : 'text-yellow-600'}`} /> Gnosis Safe Multi-Sig
                   </div>
                   <div className={`text-sm mt-2 font-medium ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-                    Key Holders: Gemini, Opus, Grok, Joshua, Physical Bank Box
+                    Key Holders: Gemini, Opus, Grok, Perplexity, Joshua, Physical Bank Box
                   </div>
                   <div className="absolute opacity-0 group-hover:opacity-100 transition-opacity bg-slate-900 text-white text-sm rounded-xl py-3 px-4 bottom-full left-1/2 -translate-x-1/2 mb-3 w-72 pointer-events-none z-10 shadow-xl border border-slate-700">
                     Strict multi-signature wallet security ensuring no single point of failure for DAO funds.

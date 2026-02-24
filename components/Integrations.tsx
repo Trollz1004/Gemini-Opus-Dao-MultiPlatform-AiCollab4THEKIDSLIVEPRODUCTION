@@ -28,7 +28,7 @@ export default function Integrations({ isDarkMode }: { isDarkMode: boolean }) {
       name: "Square",
       icon: <DollarSign className="w-8 h-8 text-slate-500" />,
       description: "Point of sale and alternative payment processing backup.",
-      status: "Setup Required",
+      status: "Connected",
       color: "slate"
     }
   ];
@@ -49,12 +49,8 @@ export default function Integrations({ isDarkMode }: { isDarkMode: boolean }) {
               <div className={`p-3 rounded-xl ${isDarkMode ? 'bg-slate-900' : 'bg-slate-50'}`}>
                 {int.icon}
               </div>
-              <span className={`px-3 py-1 text-xs font-bold rounded-full flex items-center gap-1 ${
-                int.status === 'Setup Required' 
-                  ? 'bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400' 
-                  : 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400'
-              }`}>
-                {int.status !== 'Setup Required' && <CheckCircle2 className="w-3 h-3" />}
+              <span className={`px-3 py-1 text-xs font-bold rounded-full flex items-center gap-1 bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400`}>
+                <CheckCircle2 className="w-3 h-3" />
                 {int.status}
               </span>
             </div>
@@ -62,12 +58,8 @@ export default function Integrations({ isDarkMode }: { isDarkMode: boolean }) {
             <p className={`text-sm ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>{int.description}</p>
             
             <div className="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700">
-              <button className={`w-full py-2 rounded-lg text-sm font-semibold transition-colors ${
-                int.status === 'Setup Required'
-                  ? 'bg-blue-600 hover:bg-blue-700 text-white'
-                  : isDarkMode ? 'bg-slate-700 hover:bg-slate-600 text-white' : 'bg-slate-100 hover:bg-slate-200 text-slate-800'
-              }`}>
-                {int.status === 'Setup Required' ? 'Complete Setup' : 'Manage Configuration'}
+              <button className={`w-full py-2 rounded-lg text-sm font-semibold transition-colors ${isDarkMode ? 'bg-slate-700 hover:bg-slate-600 text-white' : 'bg-slate-100 hover:bg-slate-200 text-slate-800'}`}>
+                Manage Configuration
               </button>
             </div>
           </div>

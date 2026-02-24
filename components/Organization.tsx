@@ -20,7 +20,7 @@ export default function Organization({ isDarkMode }: { isDarkMode: boolean }) {
           <p className={`mb-6 leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
             The Trollz1004 GitHub organization hosts the core infrastructure for our charitable mission. 
             All AI automations, marketing bots, and platform integrations are designed with one goal: 
-            maximizing revenue for Shriners Children's Hospitals.
+            maximizing revenue for Shriners Children&apos;s Hospitals.
           </p>
           <ul className="space-y-3">
             <li className="flex items-center gap-3">

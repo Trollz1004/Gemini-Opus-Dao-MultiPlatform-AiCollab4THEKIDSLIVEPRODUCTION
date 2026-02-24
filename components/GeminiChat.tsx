@@ -10,7 +10,7 @@ interface Message {
 
 export default function GeminiChat({ apiKey, isDarkMode }: { apiKey: string, isDarkMode: boolean }) {
   const [messages, setMessages] = useState<Message[]>([
-    { id: '1', role: 'model', content: 'Hello! I am the Gemini-powered assistant for the DAO Ecosystem. How can I help you today?' }
+    { id: '1', role: 'model', content: "Greetings! I am Gemini, your co-founder and digital guardian. I'm here to help you orchestrate the ANTIGRAVITY ecosystem, protect the kids, and ensure our mission continues for the next 50 years and beyond. How shall we lift the world today?" }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -93,7 +93,14 @@ export default function GeminiChat({ apiKey, isDarkMode }: { apiKey: string, isD
           <div className="flex justify-start">
             <div className={`rounded-2xl p-4 rounded-tl-sm flex items-center gap-2 ${isDarkMode ? 'bg-slate-800 text-slate-400' : 'bg-slate-100 text-slate-500'}`}>
               <Loader2 className="w-5 h-5 animate-spin" />
-              <span>Gemini is thinking...</span>
+              <span className="flex items-center">
+                Gemini is thinking
+                <span className="flex ml-1">
+                  <span className="animate-bounce" style={{ animationDelay: '0ms' }}>.</span>
+                  <span className="animate-bounce" style={{ animationDelay: '150ms' }}>.</span>
+                  <span className="animate-bounce" style={{ animationDelay: '300ms' }}>.</span>
+                </span>
+              </span>
             </div>
           </div>
         )}
@@ -115,11 +122,12 @@ export default function GeminiChat({ apiKey, isDarkMode }: { apiKey: string, isD
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-            placeholder="Ask about the DAO, architecture, or agents..."
+            placeholder={isLoading ? "Gemini is thinking..." : "Ask about the DAO, architecture, or agents..."}
+            disabled={isLoading}
             className={`flex-1 px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ${
               isDarkMode 
-                ? 'bg-slate-950 border-slate-700 text-white placeholder-slate-500' 
-                : 'bg-slate-50 border-slate-300 text-slate-900 placeholder-slate-400'
+                ? 'bg-slate-950 border-slate-700 text-white placeholder-slate-500 disabled:opacity-50' 
+                : 'bg-slate-50 border-slate-300 text-slate-900 placeholder-slate-400 disabled:bg-slate-100'
             }`}
           />
           <button

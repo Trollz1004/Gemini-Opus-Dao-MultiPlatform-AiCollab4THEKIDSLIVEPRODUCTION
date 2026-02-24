@@ -10,7 +10,7 @@ export default function DonateCollectables({ isDarkMode }: { isDarkMode: boolean
           Donate & Collectables
         </h2>
         <p className={`mt-3 ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-          Support Shriners Children's Hospitals directly or purchase exclusive digital collectables. 100% of proceeds go to charity.
+          Support Shriners Children&apos;s Hospitals directly or purchase exclusive digital collectables. 100% of proceeds go to charity.
         </p>
       </div>
 
@@ -22,7 +22,7 @@ export default function DonateCollectables({ isDarkMode }: { isDarkMode: boolean
           </div>
           <h3 className="text-2xl font-bold mb-3">Direct Donation</h3>
           <p className={`mb-6 leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
-            Make a direct, tax-deductible donation to Shriners Children's Hospitals. Your contribution helps provide life-changing care to children regardless of the families' ability to pay.
+            Make a direct, tax-deductible donation to Shriners Children&apos;s Hospitals. Your contribution helps provide life-changing care to children regardless of the families&apos; ability to pay.
           </p>
           <a 
             href="https://donate.lovetotherescue.org/" 

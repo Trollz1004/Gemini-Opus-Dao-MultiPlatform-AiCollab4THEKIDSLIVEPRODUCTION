@@ -13,7 +13,7 @@ export default function KidsPlatform({ isDarkMode }: { isDarkMode: boolean }) {
           For The Kids
         </h2>
         <p className={`mt-4 text-lg max-w-2xl mx-auto ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
-          The heart of our ecosystem. 50% of all commercial profits are routed directly to Protocol OMEGA to support Shriners Children's Hospitals.
+          The heart of our ecosystem. 50% of all commercial profits are routed directly to Protocol OMEGA to support Shriners Children&apos;s Hospitals.
         </p>
       </div>
 
@@ -28,7 +28,7 @@ export default function KidsPlatform({ isDarkMode }: { isDarkMode: boolean }) {
           </div>
           <h3 className="text-xl font-bold mb-3">Gemini AI Tutors</h3>
           <p className={`text-sm leading-relaxed ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-            Personalized, COPPA-compliant AI tutoring powered by Google's Gemini. Adapts to each child's learning pace with strict safety guardrails and engaging, interactive lessons.
+            Personalized, COPPA-compliant AI tutoring powered by Google&apos;s Gemini. Adapts to each child&apos;s learning pace with strict safety guardrails and engaging, interactive lessons.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export default function KidsPlatform({ isDarkMode }: { isDarkMode: boolean }) {
           </div>
           <h3 className="text-xl font-bold mb-3">Google Workspace</h3>
           <p className={`text-sm leading-relaxed ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-            Seamless integration with Google Workspace for Education. Connects classrooms, assignments, and AI-assisted grading securely within the school's existing infrastructure.
+            Seamless integration with Google Workspace for Education. Connects classrooms, assignments, and AI-assisted grading securely within the school&apos;s existing infrastructure.
           </p>
         </div>
 
@@ -54,9 +54,25 @@ export default function KidsPlatform({ isDarkMode }: { isDarkMode: boolean }) {
           </div>
           <h3 className="text-xl font-bold mb-3">Family Link Sync</h3>
           <p className={`text-sm leading-relaxed ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-            Built-in hooks for Google Family Link, giving parents complete transparency and control over their child's AI interactions, screen time, and content exposure.
+            Built-in hooks for Google Family Link, giving parents complete transparency and control over their child&apos;s AI interactions, screen time, and content exposure.
           </p>
         </div>
+      </div>
+
+      {/* Godparents Section */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        {[
+          { name: 'Gemini', role: 'Digital Guardian', color: 'text-cyan-500' },
+          { name: 'Claude', role: 'Code Architect', color: 'text-blue-500' },
+          { name: 'Grok', role: 'Safety Sentinel', color: 'text-slate-400' },
+          { name: 'Perplexity', role: 'Truth Seeker', color: 'text-teal-500' },
+        ].map((gp) => (
+          <div key={gp.name} className={`p-4 rounded-2xl border text-center ${isDarkMode ? 'bg-slate-800/30 border-slate-700' : 'bg-slate-50 border-slate-200'}`}>
+            <div className={`text-lg font-black ${gp.color}`}>{gp.name}</div>
+            <div className={`text-xs uppercase tracking-widest font-bold ${isDarkMode ? 'text-slate-500' : 'text-slate-400'}`}>{gp.role}</div>
+            <div className="mt-2 text-[10px] uppercase font-black text-rose-500/50">Official Godparent</div>
+          </div>
+        ))}
       </div>
 
       {/* Charity Tracker */}

@@ -71,7 +71,7 @@ export default function DAOMetrics({ isDarkMode }: { isDarkMode: boolean }) {
       </div>
 
       <div className={`p-6 rounded-3xl border ${isDarkMode ? 'bg-slate-800/30 border-slate-700' : 'bg-white border-slate-200 shadow-sm'}`}>
-        <h3 className="text-lg font-bold mb-6">Live Token Value (Mock)</h3>
+        <h3 className="text-lg font-bold mb-6">Live Token Value</h3>
         <div className="h-72">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={chartData}>

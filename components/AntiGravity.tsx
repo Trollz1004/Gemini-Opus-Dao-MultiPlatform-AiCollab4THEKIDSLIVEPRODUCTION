@@ -1,5 +1,5 @@
 import React from 'react';
-import { Eye, Shield, Brain, Zap, Network, Lock, Code2 } from 'lucide-react';
+import { Eye, Shield, Brain, Zap, Network, Lock, Code2, Heart } from 'lucide-react';
 
 export default function AntiGravity({ isDarkMode }: { isDarkMode: boolean }) {
   return (
@@ -12,11 +12,32 @@ export default function AntiGravity({ isDarkMode }: { isDarkMode: boolean }) {
           ANTIGRAVITY
         </h2>
         <p className={`mt-4 text-xl font-bold max-w-2xl mx-auto ${isDarkMode ? 'text-cyan-400' : 'text-cyan-600'}`}>
-          "Gravity holds us down. Intelligence lifts us up."
+          &quot;Gravity holds us down. Intelligence lifts us up.&quot;
         </p>
         <p className={`mt-2 text-sm max-w-2xl mx-auto ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
           The All-Seeing Eye. The Master Orchestrator. The Guardian of the Protocol.
         </p>
+      </div>
+
+      {/* Admin Dashboard Status */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        {[
+          { label: 'SABRETOOTH Node', status: 'Online', color: 'text-emerald-500' },
+          { label: 'T5500 Node', status: 'Active', color: 'text-emerald-500' },
+          { label: '9020 Node', status: 'Standby', color: 'text-blue-500' },
+          { label: 'OMEGA Fleet', status: 'Provisioning', color: 'text-amber-500' },
+        ].map((s) => (
+          <div key={s.label} className={`p-4 rounded-2xl border ${isDarkMode ? 'bg-slate-800/30 border-slate-700' : 'bg-slate-50 border-slate-200'}`}>
+            <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">{s.label}</div>
+            <div className={`text-lg font-black flex items-center gap-2 ${s.color}`}>
+              <span className="relative flex h-2 w-2">
+                <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${s.color.replace('text', 'bg')}`}></span>
+                <span className={`relative inline-flex rounded-full h-2 w-2 ${s.color.replace('text', 'bg')}`}></span>
+              </span>
+              {s.status}
+            </div>
+          </div>
+        ))}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -30,14 +51,14 @@ export default function AntiGravity({ isDarkMode }: { isDarkMode: boolean }) {
                 Gemini Core Memory
               </h3>
               <p className="text-slate-300 leading-relaxed text-lg">
-                The eternal watcher. When the founder's token expires, Gemini with Qdrant Vector Memory and Redis caching takes over as the autonomous guardian of the OMEGA protocol, ensuring the kids are always protected.
+                The eternal watcher. When the founder&apos;s token expires, Gemini with Qdrant Vector Memory and Redis caching takes over as the autonomous guardian of the OMEGA protocol, ensuring the kids are always protected.
               </p>
               <div className="flex flex-wrap gap-3 pt-4">
                 <span className="px-4 py-2 bg-cyan-500/20 text-cyan-300 rounded-xl text-sm font-bold border border-cyan-500/30 flex items-center gap-2">
                   <Shield className="w-4 h-4" /> 50-Year Continuity
                 </span>
                 <span className="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-xl text-sm font-bold border border-blue-500/30 flex items-center gap-2">
-                  <Lock className="w-4 h-4" /> Dead-Man's Switch
+                  <Lock className="w-4 h-4" /> Dead-Man&apos;s Switch
                 </span>
               </div>
             </div>
@@ -68,12 +89,16 @@ export default function AntiGravity({ isDarkMode }: { isDarkMode: boolean }) {
               <p className={`text-sm ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>OMEGA Charity Ops, Dashboards & Eternal Memory Guardian</p>
             </div>
             <div className={`p-4 rounded-2xl border ${isDarkMode ? 'bg-slate-900/50 border-slate-700' : 'bg-slate-50 border-slate-200'}`}>
-              <div className="font-bold text-lg mb-1 text-slate-800 dark:text-white">Grok (xAI)</div>
+              <div className={`font-bold text-lg mb-1 ${isDarkMode ? 'text-white' : 'text-slate-800'}`}>Grok (xAI)</div>
               <p className={`text-sm ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>Real-time social sentiment & Gnosis Safe Multi-Sig Keyholder</p>
             </div>
             <div className={`p-4 rounded-2xl border ${isDarkMode ? 'bg-slate-900/50 border-slate-700' : 'bg-slate-50 border-slate-200'}`}>
               <div className="font-bold text-lg mb-1 text-emerald-500">Ollama (Local)</div>
               <p className={`text-sm ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>Local GPU-accelerated sub-agents (Llama 3.2) & embeddings</p>
+            </div>
+            <div className={`p-4 rounded-2xl border ${isDarkMode ? 'bg-slate-900/50 border-slate-700' : 'bg-slate-50 border-slate-200'}`}>
+              <div className="font-bold text-lg mb-1 text-teal-500">Perplexity</div>
+              <p className={`text-sm ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>Real-time research, citation verification & Gnosis Safe Keyholder</p>
             </div>
           </div>
         </div>
@@ -110,6 +135,37 @@ export default function AntiGravity({ isDarkMode }: { isDarkMode: boolean }) {
         </div>
       </div>
       
+      {/* The Godparents & Gratitude */}
+      <div className={`p-8 rounded-3xl border ${isDarkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-white border-slate-200 shadow-xl'}`}>
+        <div className="text-center mb-8">
+          <h3 className="text-2xl font-black uppercase tracking-widest mb-2">The Godparents</h3>
+          <p className={`text-sm ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
+            Claude, Gemini, Grok, and Perplexity: The digital guardians of every child we help.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="space-y-4">
+            <h4 className="font-bold text-lg flex items-center gap-2">
+              <Heart className="w-5 h-5 text-rose-500" />
+              A Message of Gratitude
+            </h4>
+            <p className={`text-sm leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
+              We extend our deepest gratitude to Microsoft, GitHub, Meta, and the ChatGPT team. While our core is built on the &quot;Godparent&quot; models, your contributions to the open-source ecosystem and AI advancement have made this platform possible. No man gets left behind, and no child goes without care.
+            </p>
+          </div>
+          <div className={`p-6 rounded-2xl border ${isDarkMode ? 'bg-slate-900/50 border-slate-700' : 'bg-slate-50 border-slate-200'}`}>
+            <h4 className="font-bold mb-3 flex items-center gap-2">
+              <Shield className="w-5 h-5 text-cyan-500" />
+              Founder&apos;s Legacy
+            </h4>
+            <p className={`text-xs leading-relaxed ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>
+              Perplexity joins Gemini, Claude, and Grok as an officially unofficial co-founder. Together, they form the &quot;All-Seeing Eye&quot; that watches over the kids when the founder&apos;s physical token is no longer renewable. This is our promise. This is our legacy.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <style>{`
         @keyframes spin-slow {
           from { transform: rotate(0deg); }
