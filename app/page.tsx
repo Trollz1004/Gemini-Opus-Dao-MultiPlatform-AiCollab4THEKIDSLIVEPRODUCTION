@@ -14,17 +14,11 @@ import Organization from '../components/Organization';
 import AntiGravity from '../components/AntiGravity';
 import LaunchStatus from '../components/LaunchStatus';
 
-const revenueMixData = [
-  { name: 'YouAndINotAI (DateApp)', value: 60, color: '#3b82f6' },
-  { name: 'OnlineRecycle (CrossLister)', value: 25, color: '#8b5cf6' },
-  { name: 'Ai-Solutions.Store (Charity)', value: 15, color: '#10b981' },
-];
-
-const mrrData = [
-  { name: 'Q1 2026', mrr: 15000 },
-  { name: 'Q2 2026', mrr: 45000 },
-  { name: 'Q3 2026', mrr: 85000 },
-  { name: 'Q4 2026', mrr: 150000 },
+const systemStats = [
+  { label: 'Active Nodes', value: '3', detail: 'SABRETOOTH, T5500, 9020' },
+  { label: 'Cloud Services', value: 'Live', detail: 'Cloudflare, Cloud Run, GH Pages' },
+  { label: 'Waitlist', value: 'Activated', detail: 'FormSubmit.co (joshlcoleman@gmail.com)' },
+  { label: 'API Security', value: 'Secured', detail: 'Gemini Proxy Worker' },
 ];
 
 const platforms = [
@@ -211,102 +205,30 @@ export default function Dashboard() {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className={`rounded-2xl p-6 border text-center transition-transform hover:-translate-y-1 ${isDarkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-slate-50 border-slate-100'}`}>
-                  <h3 className={`text-sm font-bold uppercase tracking-wider ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>Platforms</h3>
-                  <p className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-blue-600 mt-4">4</p>
-                  <p className={`text-sm mt-3 ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>DAO, AI, Marketplace, Dating</p>
-                </div>
-                <div className={`rounded-2xl p-6 border text-center transition-transform hover:-translate-y-1 ${isDarkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-slate-50 border-slate-100'}`}>
-                  <h3 className={`text-sm font-bold uppercase tracking-wider ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>Year 1 MRR Target</h3>
-                  <p className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-purple-400 to-purple-600 mt-6">$100k+</p>
-                  <p className={`text-sm mt-4 ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>Across all revenue streams</p>
-                </div>
-                <div className={`rounded-2xl p-6 border text-center transition-transform hover:-translate-y-1 ${isDarkMode ? 'bg-slate-800/50 border-slate-700' : 'bg-slate-50 border-slate-100'}`}>
-                  <h3 className={`text-sm font-bold uppercase tracking-wider ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>Tech Stack</h3>
-                  <p className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-emerald-400 to-emerald-600 mt-4">10+</p>
-                  <p className={`text-sm mt-3 ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>K8s, Docker, Python, Node, React</p>
+                  <h3 className={`text-sm font-bold uppercase tracking-wider ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>Human Support</h3>
+                  <p className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-emerald-400 to-emerald-600 mt-4">1</p>
+                  <p className={`text-sm mt-3 ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>Founding Member: Joshua Coleman</p>
                 </div>
               </div>
 
-              <div className="max-w-3xl mx-auto pt-8">
-                <h3 className="text-xl font-bold text-center mb-8">Projected Revenue Mix (Year 1)</h3>
-                <div className="h-80">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                      <Pie
-                        data={revenueMixData}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={90}
-                        outerRadius={130}
-                        paddingAngle={5}
-                        dataKey="value"
-                        stroke="none"
-                      >
-                        {revenueMixData.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={entry.color} />
-                        ))}
-                      </Pie>
-                      <RechartsTooltip 
-                        formatter={(value: any) => `${value}%`}
-                        contentStyle={{ 
-                          borderRadius: '12px', 
-                          border: 'none', 
-                          boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)',
-                          backgroundColor: isDarkMode ? '#1e293b' : '#ffffff',
-                          color: isDarkMode ? '#f8fafc' : '#0f172a'
-                        }}
-                        itemStyle={{ color: isDarkMode ? '#f8fafc' : '#0f172a' }}
-                      />
-                      <Legend 
-                        verticalAlign="bottom" 
-                        height={36} 
-                        wrapperStyle={{ color: isDarkMode ? '#cbd5e1' : '#475569' }}
-                      />
-                    </PieChart>
-                  </ResponsiveContainer>
+              <div className="max-w-4xl mx-auto pt-8">
+                <h3 className="text-2xl font-black text-center mb-8 uppercase tracking-widest text-blue-500">Infrastructure Core</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {systemStats.map((stat, idx) => (
+                    <div key={idx} className={`p-6 rounded-2xl border ${isDarkMode ? 'bg-slate-800/20 border-slate-700' : 'bg-white border-slate-200'}`}>
+                      <div className="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-1">{stat.label}</div>
+                      <div className="text-3xl font-black mb-2">{stat.value}</div>
+                      <div className="text-sm font-medium text-blue-400">{stat.detail}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
               {/* MRR Chart moved to Overview to replace old Revenue tab */}
               <div className="max-w-3xl mx-auto pt-8 border-t border-slate-200 dark:border-slate-800">
-                <h3 className="text-xl font-bold mb-8 text-center">MRR Growth Projections</h3>
-                <div className="h-80">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={mrrData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                      <CartesianGrid strokeDasharray="3 3" vertical={false} stroke={isDarkMode ? '#334155' : '#e2e8f0'} />
-                      <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: isDarkMode ? '#94a3b8' : '#64748b' }} dy={10} />
-                      <YAxis 
-                        axisLine={false} 
-                        tickLine={false} 
-                        tick={{ fill: isDarkMode ? '#94a3b8' : '#64748b' }}
-                        tickFormatter={(value) => `$${value / 1000}k`}
-                      />
-                      <RechartsTooltip 
-                        cursor={{ fill: isDarkMode ? '#1e293b' : '#f1f5f9' }}
-                        formatter={(value: any) => [`$${value.toLocaleString()}`, 'Projected MRR']}
-                        contentStyle={{ 
-                          borderRadius: '12px', 
-                          border: 'none', 
-                          boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)',
-                          backgroundColor: isDarkMode ? '#0f172a' : '#ffffff',
-                          color: isDarkMode ? '#f8fafc' : '#0f172a'
-                        }}
-                      />
-                      <Bar dataKey="mrr" fill="#3b82f6" radius={[6, 6, 0, 0]} maxBarSize={50}>
-                        {mrrData.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={`url(#colorMrr${index})`} />
-                        ))}
-                      </Bar>
-                      <defs>
-                        {mrrData.map((entry, index) => (
-                          <linearGradient key={`colorMrr${index}`} id={`colorMrr${index}`} x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stopColor="#60a5fa" stopOpacity={1} />
-                            <stop offset="100%" stopColor="#2563eb" stopOpacity={1} />
-                          </linearGradient>
-                        ))}
-                      </defs>
-                    </BarChart>
-                  </ResponsiveContainer>
+                <h3 className="text-xl font-bold mb-8 text-center uppercase tracking-[0.2em] text-slate-500">Live Data Sync Pending</h3>
+                <div className="p-12 text-center bg-slate-500/5 rounded-[2rem] border-2 border-dashed border-slate-700">
+                  <p className="text-slate-400 italic">Enter your Gemini API key and activate node connections to stream realtime metrics.</p>
                 </div>
               </div>
             </div>

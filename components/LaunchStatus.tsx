@@ -3,10 +3,10 @@ import { Rocket, CheckCircle2, AlertCircle, Clock, Zap, Shield, Mail, TrendingUp
 
 export default function LaunchStatus({ isDarkMode }: { isDarkMode: boolean }) {
   const stats = [
-    { label: 'Total Visitors', value: '1,247', change: '+100%', icon: <TrendingUp className="w-5 h-5 text-emerald-500" /> },
-    { label: 'Waitlist', value: 'ACTIVATED', change: 'FormSubmit.co', icon: <Mail className="w-5 h-5 text-cyan-500" /> },
-    { label: 'Infrastructure', value: 'GitHub Pages', change: 'Unlimited BW', icon: <Zap className="w-5 h-5 text-yellow-500" /> },
-    { label: 'Security', value: 'Proxied', change: 'Zero Leak', icon: <Shield className="w-5 h-5 text-indigo-500" /> },
+    { label: 'Traffic Status', value: 'VIRAL', change: 'Recording', icon: <TrendingUp className="w-5 h-5 text-emerald-500" /> },
+    { label: 'Waitlist', value: 'ACTIVATED', change: 'FormSubmit', icon: <Mail className="w-5 h-5 text-cyan-500" /> },
+    { label: 'Infrastructure', value: 'GH Pages', change: 'Viral-Ready', icon: <Zap className="w-5 h-5 text-yellow-500" /> },
+    { label: 'Fleet Status', value: '3 Nodes', change: 'Online', icon: <Shield className="w-5 h-5 text-indigo-500" /> },
   ];
 
   const statuses = [

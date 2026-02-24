@@ -13,28 +13,13 @@ const generateData = () => {
 };
 
 export default function DAOMetrics({ isDarkMode }: { isDarkMode: boolean }) {
-  const [chartData, setChartData] = useState(generateData());
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setChartData(prev => {
-        const newData = [...prev.slice(1)];
-        const lastValue = newData[newData.length - 1].value;
-        newData.push({
-          time: 'Just now',
-          value: Math.round(lastValue + Math.random() * 100 - 40)
-        });
-        return newData;
-      });
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
+  const [chartData, setChartData] = useState<{time: string, value: number}[]>([]);
 
   const metrics = [
-    { label: "Active Proposals", value: "12", change: "+2", icon: <Activity className="w-5 h-5 text-blue-500" />, positive: true },
-    { label: "Total Members", value: "4,521", change: "+124", icon: <Users className="w-5 h-5 text-purple-500" />, positive: true },
-    { label: "Treasury Balance", value: "$2.4M", change: "-$12k", icon: <Coins className="w-5 h-5 text-amber-500" />, positive: false },
-    { label: "Network TPS", value: "2,450", change: "+15%", icon: <Zap className="w-5 h-5 text-emerald-500" />, positive: true },
+    { label: "Active Nodes", value: "3", change: "+1", icon: <Activity className="w-5 h-5 text-blue-500" />, positive: true },
+    { label: "Payment Links", value: "5", change: "Live", icon: <Coins className="w-5 h-5 text-amber-500" />, positive: true },
+    { label: "Waitlist Status", value: "Active", change: "FormSubmit", icon: <Users className="w-5 h-5 text-purple-500" />, positive: true },
+    { label: "Network Status", value: "Proxied", change: "Secure", icon: <Zap className="w-5 h-5 text-emerald-500" />, positive: true },
   ];
 
   return (
