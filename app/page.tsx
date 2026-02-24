@@ -12,6 +12,7 @@ import KidsPlatform from '../components/KidsPlatform';
 import DonateCollectables from '../components/DonateCollectables';
 import Organization from '../components/Organization';
 import AntiGravity from '../components/AntiGravity';
+import LaunchStatus from '../components/LaunchStatus';
 
 const revenueMixData = [
   { name: 'YouAndINotAI (DateApp)', value: 60, color: '#3b82f6' },
@@ -97,6 +98,7 @@ export default function Dashboard() {
   const tabs = [
     { id: 'overview', label: 'Overview' },
     { id: 'metrics', label: 'DAO Metrics' },
+    { id: 'launch', label: 'Launch Status 🚀' },
     { id: 'chat', label: 'AI Assistant' },
     { id: 'designer', label: 'Agent Designer' },
     { id: 'platforms', label: 'Platforms' },
@@ -310,6 +312,7 @@ export default function Dashboard() {
           )}
 
           {activeTab === 'metrics' && <DAOMetrics isDarkMode={isDarkMode} />}
+          {activeTab === 'launch' && <LaunchStatus isDarkMode={isDarkMode} />}
           {activeTab === 'chat' && <GeminiChat apiKey={apiKey} isDarkMode={isDarkMode} />}
           {activeTab === 'designer' && <AgentDesigner isDarkMode={isDarkMode} />}
           {activeTab === 'integrations' && <Integrations isDarkMode={isDarkMode} />}
