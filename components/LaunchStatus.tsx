@@ -20,6 +20,7 @@ export default function LaunchStatus({ isDarkMode }: { isDarkMode: boolean }) {
     { name: 'Social Posting', status: 'Manual', type: 'info', description: 'Josh posting updates via browser to bypass rate limits.' },
     { name: 'Admin Dashboard', status: 'Live', type: 'success', description: 'Cloud Run (us-west1) orchestrator for Antigravity.', url: 'https://antigravity-official-admin-dashboard-731395189513.us-west1.run.app' },
     { name: 'AIS Preview', status: 'Live', type: 'success', description: 'Cloud Run (us-west2) staging for AI Solutions.', url: 'https://ais-pre-3emnhodmyh4qdopojzfdmk-56282016635.us-west2.run.app' },
+    { name: 'AI Studio App', status: 'Live', type: 'success', description: 'Official AI Studio deployment link.', url: 'https://ai.studio/apps/586ac26d-367d-449f-80f5-3fa6b62ede4b' },
   ];
 
   return (
